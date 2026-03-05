@@ -1,5 +1,15 @@
 {
 	"search.exclude": {
-		"export/**/*.*": true
+		"export/**": true
 	},
+	"lime.defaultTargetConfiguration": "Windows / Indev",
+	"lime.targetConfigurations": [
+		{
+			"label": "Windows / Indev",
+			"target": "windows",
+			"args": [
+				"-Dindev",
+			]
+		}
+	],
 }
