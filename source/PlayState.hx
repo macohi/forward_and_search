@@ -7,7 +7,7 @@ class PlayState extends FlxState
 {
 	public var scene:SceneData = {};
 
-	override public function new(scene:String)
+	override public function new(?scene:String)
 	{
 		super();
 
