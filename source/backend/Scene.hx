@@ -19,7 +19,10 @@ class SceneManager
 		catch (e)
 		{
 			Application.current.window.alert('Error parsing scene: ${scene}\n\n${e}', 'SCENEMANAGER : PARSING ERROR');
+			return {};
 		}
+
+		trace('Parsed scene: $scene');
 
 		return sceneData;
 	}
