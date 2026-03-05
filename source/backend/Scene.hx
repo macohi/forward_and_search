@@ -3,7 +3,8 @@ package backend;
 import lime.utils.Assets;
 import haxe.Json;
 
-typedef SceneData = {
+typedef SceneData =
+{
 	portrait:String,
 }
 
@@ -30,7 +31,16 @@ class SceneManager
 		log('Parsed scene: $scene', SCENE);
 		for (field in Reflect.fields(sceneData))
 		{
-			trace(' * ${field} : ${Reflect.field(sceneData, field)}');
+			final fieldData:Dynamic = Reflect.field(sceneData, field);
+
+			if (Std.isOfType(fieldData, String))
+			{
+				trace(' * ${field} : "${fieldData}"');
+
+				continue;
+			}
+
+			trace(' * ${field} : ${fieldData}');
 		}
 
 		return sceneData;
