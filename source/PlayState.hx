@@ -5,7 +5,7 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	public var scene:SceneData = {};
+	public var scene:SceneData;
 
 	override public function new(?scene:String)
 	{

@@ -1,7 +1,5 @@
 package backend;
 
-import backend.Logging.LogType;
-import backend.Logging.Logger;
 import lime.utils.Assets;
 import haxe.Json;
 
@@ -25,11 +23,15 @@ class SceneManager
 		}
 		catch (e)
 		{
-			Logger.error('PARSING ERROR', 'Error parsing scene: "${scene}": $e', LogType.SCENE);
+			error('PARSING ERROR', 'Error parsing scene: "${scene}": $e', SCENE);
 			return DUMMY_SCENE;
 		}
 
-		Logger.log('Parsed scene: $scene', LogType.SCENE);
+		log('Parsed scene: $scene', SCENE);
+		for (field in Reflect.fields(sceneData))
+		{
+			trace(' * ${field} : ${Reflect.field(sceneData, field)}');
+		}
 
 		return sceneData;
 	}
