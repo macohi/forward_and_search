@@ -3,13 +3,12 @@
 		"export/**": true
 	},
 	"lime.defaultTargetConfiguration": "Windows / Indev",
-	"lime.targetConfigurations": [
+	"lime.buildTypes": [
 		{
-			"label": "Windows / Indev",
-			"target": "windows",
+			"label": "Indev",
 			"args": [
-				"-Dindev",
+				"-Dindev"
 			]
-		}
+		},
 	],
 }
