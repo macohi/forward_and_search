@@ -35,12 +35,12 @@ class SceneManager
 
 			if (Std.isOfType(fieldData, String))
 			{
-				trace(' * ${field} : "${fieldData}"');
+				log(' * ${field} : "${fieldData}"', SCENE);
 
 				continue;
 			}
 
-			trace(' * ${field} : ${fieldData}');
+			log(' * ${field} : ${fieldData}', SCENE);
 		}
 
 		return sceneData;
