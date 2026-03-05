@@ -15,7 +15,11 @@
 
 	<!-- _________________________________ Custom _______________________________ -->
 
-	<!--Place custom nodes like icons here-->
+	<haxedef name="HXCPP_CHECK_POINTER" if="desktop" />
+	<haxedef name="HXCPP_STACK_LINE" if="desktop" />
+	<haxedef name="HXCPP_STACK_TRACE" if="desktop" />
+
+	<haxeflag name="--dce full" unless="debug" />
 
 	<!-- ____________________________ Window Settings ___________________________ -->
 
