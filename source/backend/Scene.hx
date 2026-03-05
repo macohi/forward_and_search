@@ -19,7 +19,7 @@ class SceneManager
 		}
 		catch (e)
 		{
-			Logger.error('PARSING ERROR', 'Error parsing scene: "${scene}"\n\n$e', LogType.SCENE);
+			Logger.error('PARSING ERROR', 'Error parsing scene: "${scene}": $e', LogType.SCENE);
 			return {};
 		}
 
