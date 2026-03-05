@@ -1,8 +1,9 @@
 package backend;
 
+import backend.Logging.LogType;
+import backend.Logging.Logger;
 import lime.utils.Assets;
 import haxe.Json;
-import lime.app.Application;
 
 typedef SceneData = {}
 
@@ -18,11 +19,11 @@ class SceneManager
 		}
 		catch (e)
 		{
-			Application.current.window.alert('Error parsing scene: ${scene}\n\n${e}', 'SCENEMANAGER : PARSING ERROR');
+			Logger.error('PARSING ERROR', 'Error parsing scene: "${scene}"\n\n$e', LogType.SCENE);
 			return {};
 		}
 
-		trace('Parsed scene: $scene');
+		Logger.log('Parsed scene: $scene', LogType.SCENE);
 
 		return sceneData;
 	}
