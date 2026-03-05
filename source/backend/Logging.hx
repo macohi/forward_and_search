@@ -1,5 +1,7 @@
 package backend;
 
+import haxe.Log;
+import haxe.PosInfos;
 import lime.app.Application;
 
 class LogType
@@ -18,14 +20,14 @@ class LogType
 
 class Logger
 {
-	public static function log(d:Dynamic, type:LogType)
+	public static function log(d:Dynamic, type:LogType, ?posInfos:PosInfos)
 	{
-		trace('${type.logPrefix ?? ''}$d');
+		Log.trace('${type.logPrefix ?? ''}$d', posInfos);
 	}
 
-	public static function error(e:String, d:Dynamic, type:LogType)
+	public static function error(e:String, d:Dynamic, type:LogType, ?posInfos:PosInfos)
 	{
-		log(d, type);
+		log(d, type, posInfos);
 		Application.current.window.alert(d, '${type.errorPrefix ?? ''}$e');
 	}
 }
